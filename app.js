@@ -21,7 +21,7 @@ en:{
  tech:"Technical details",
  score:["Protection score","Our rating of your public settings, out of 100."],
  sim:{title:"The fake email a stranger could send as you, today",src:"Stranger",dst:"Your customer",subject:"Invoice 2291: our bank details have changed",body:"Dear customer, please use our new account for this payment. The old one is closed.",stamp:{bad:"DELIVERED TO INBOX",warn:"SENT TO SPAM",good:"REFUSED"},note:{bad:"Nothing in your settings tells your customer's email service to stop this email.",warn:"It lands in spam. Some customers open spam when they're expecting an invoice.",good:"Your customer's email service checks your settings and refuses it. They never see it."}},
- cta:{badH:d=>`Get ${d} protected`,badP:"We set it up with you in stages, so your real emails keep arriving. You pay only after this page shows green.",badWa:"Fix it with Muhammad on WhatsApp",goodH:"You're protected. Keep it that way.",goodP:"Settings break when companies change hosting. The monthly watch re-checks this for you and alerts you on WhatsApp the day a copycat domain appears.",goodWa:"Ask about the monthly watch",save:"Save as image",copy:"Copy link",again:"Check another company"},
+ cta:{badH:d=>`Get ${d} protected`,badP:"We set it up with you in stages, so your real emails keep arriving. You pay only after this page shows green.",badWa:"Fix it with Muhammad on WhatsApp",goodH:"You're protected. Keep it that way.",goodP:"Settings break when companies change hosting. The monthly watch re-checks this for you and alerts you on WhatsApp the day a copycat domain appears.",goodWa:"Ask about the monthly watch",save:"Save as image",copy:"Copy link",again:"Check another company",share:"Share with your IT person",shareMsg:(d,u)=>`I checked our company email on this free tool and it says: ${d}. Can you look at it? ${u}`},
  wa:{main:"Hello Muhammad, I'd like my company's email checked and protected.",bad:(d,s)=>`Hello Muhammad, I checked ${d} on your Email Fraud Check. Result: ${s}. Can you help us fix it?`,good:(d,s)=>`Hello Muhammad, I checked ${d} on your Email Fraud Check. Result: ${s}. Tell me about the monthly watch.`},
  nx:["We couldn't find that website","Check the spelling, or type the part after the @ in your work email."],
  report:{title:"EMAIL FRAUD CHECK",date:"Checked"}
@@ -42,7 +42,7 @@ ar:{
  tech:"التفاصيل التقنية",
  score:["درجة الحماية","تقييمنا لإعداداتك العامة، من 100."],
  sim:{title:"البريد المزيف الذي يستطيع غريب إرساله باسمك اليوم",src:"غريب",dst:"عميلك",subject:"الفاتورة 2291: تغيّرت بياناتنا البنكية",body:"عزيزي العميل، يرجى استخدام حسابنا الجديد لهذه الدفعة. الحساب القديم مُغلق.",stamp:{bad:"وصلت إلى الوارد",warn:"ذهبت إلى العشوائي",good:"مرفوضة"},note:{bad:"لا شيء في إعداداتك يطلب من خدمة بريد عميلك إيقاف هذه الرسالة.",warn:"تصل إلى العشوائي. بعض العملاء يفتحونه حين ينتظرون فاتورة.",good:"خدمة بريد عميلك تتحقق من إعداداتك وترفضها. لن يراها أبدًا."}},
- cta:{badH:d=>`احمِ ${d}`,badP:"نُعدّها معك على مراحل حتى تستمر رسائلك الحقيقية بالوصول. لا تدفع إلا بعد أن تظهر هذه الصفحة باللون الأخضر.",badWa:"أصلحها مع محمد عبر واتساب",goodH:"أنت محمي. حافظ على ذلك.",goodP:"الإعدادات تتعطل عند تغيير الاستضافة. المتابعة الشهرية تعيد الفحص عنك وتنبهك عبر واتساب يوم ظهور نطاق مقلّد.",goodWa:"اسأل عن المتابعة الشهرية",save:"احفظ كصورة",copy:"انسخ الرابط",again:"افحص شركة أخرى"},
+ cta:{badH:d=>`احمِ ${d}`,badP:"نُعدّها معك على مراحل حتى تستمر رسائلك الحقيقية بالوصول. لا تدفع إلا بعد أن تظهر هذه الصفحة باللون الأخضر.",badWa:"أصلحها مع محمد عبر واتساب",goodH:"أنت محمي. حافظ على ذلك.",goodP:"الإعدادات تتعطل عند تغيير الاستضافة. المتابعة الشهرية تعيد الفحص عنك وتنبهك عبر واتساب يوم ظهور نطاق مقلّد.",goodWa:"اسأل عن المتابعة الشهرية",save:"احفظ كصورة",copy:"انسخ الرابط",again:"افحص شركة أخرى",share:"شارك مع مسؤول التقنية",shareMsg:(d,u)=>`فحصت بريد شركتنا بهذه الأداة المجانية والنتيجة: ${d}. هل يمكنك الاطلاع عليها؟ ${u}`},
  wa:{main:"مرحبًا محمد، أريد فحص بريد شركتي وحمايته.",bad:(d,s)=>`مرحبًا محمد، فحصت ${d} على أداة فحص احتيال البريد. النتيجة: ${s}. هل يمكنك مساعدتنا في الإصلاح؟`,good:(d,s)=>`مرحبًا محمد، فحصت ${d} على أداة فحص احتيال البريد. النتيجة: ${s}. أخبرني عن المتابعة الشهرية.`},
  nx:["لم نجد هذا الموقع","تحقق من الكتابة، أو اكتب الجزء الذي بعد @ في بريد عملك."],
  report:{title:"فحص احتيال البريد الإلكتروني",date:"تاريخ الفحص"}
@@ -63,7 +63,7 @@ sw:{
  tech:"Maelezo ya kiufundi",
  score:["Alama ya ulinzi","Tathmini yetu ya mipangilio yako ya umma, kati ya 100."],
  sim:{title:"Barua bandia ambayo mgeni anaweza kutuma kwa jina lako leo",src:"Mgeni",dst:"Mteja wako",subject:"Ankara 2291: taarifa zetu za benki zimebadilika",body:"Mpendwa mteja, tafadhali tumia akaunti yetu mpya kwa malipo haya. Ile ya zamani imefungwa.",stamp:{bad:"IMEFIKA INBOX",warn:"IMEENDA SPAM",good:"IMEKATALIWA"},note:{bad:"Hakuna kitu kwenye mipangilio yako kinachoiambia huduma ya barua ya mteja wako isimamishe barua hii.",warn:"Inafika spam. Baadhi ya wateja huifungua wanaposubiri ankara.",good:"Huduma ya barua ya mteja wako inakagua mipangilio yako na kuikataa. Mteja wako haioni kamwe."}},
- cta:{badH:d=>`Linda ${d}`,badP:"Tunaweka pamoja nawe kwa hatua ili barua zako halali ziendelee kufika. Unalipa tu baada ya ukurasa huu kuonyesha kijani.",badWa:"Rekebisha na Muhammad kupitia WhatsApp",goodH:"Umelindwa. Ibaki hivyo.",goodP:"Mipangilio huharibika kampuni zikibadilisha hosting. Uangalizi wa kila mwezi unakagua upya kwa niaba yako na kukujulisha WhatsApp siku domain ya kuiga ikionekana.",goodWa:"Uliza kuhusu uangalizi wa kila mwezi",save:"Hifadhi kama picha",copy:"Nakili kiungo",again:"Kagua kampuni nyingine"},
+ cta:{badH:d=>`Linda ${d}`,badP:"Tunaweka pamoja nawe kwa hatua ili barua zako halali ziendelee kufika. Unalipa tu baada ya ukurasa huu kuonyesha kijani.",badWa:"Rekebisha na Muhammad kupitia WhatsApp",goodH:"Umelindwa. Ibaki hivyo.",goodP:"Mipangilio huharibika kampuni zikibadilisha hosting. Uangalizi wa kila mwezi unakagua upya kwa niaba yako na kukujulisha WhatsApp siku domain ya kuiga ikionekana.",goodWa:"Uliza kuhusu uangalizi wa kila mwezi",save:"Hifadhi kama picha",copy:"Nakili kiungo",again:"Kagua kampuni nyingine",share:"Mtumie mtu wako wa IT",shareMsg:(d,u)=>`Nimekagua barua pepe za kampuni yetu kwenye zana hii ya bure, inasema: ${d}. Unaweza kuiangalia? ${u}`},
  wa:{main:"Habari Muhammad, nataka barua pepe za kampuni yangu zikaguliwe na kulindwa.",bad:(d,s)=>`Habari Muhammad, nimekagua ${d} kwenye Email Fraud Check yako. Matokeo: ${s}. Unaweza kutusaidia kurekebisha?`,good:(d,s)=>`Habari Muhammad, nimekagua ${d} kwenye Email Fraud Check yako. Matokeo: ${s}. Nieleze kuhusu uangalizi wa kila mwezi.`},
  nx:["Hatukupata tovuti hiyo","Hakiki tahajia, au andika sehemu iliyo baada ya @ kwenye barua pepe ya kazini."],
  report:{title:"UKAGUZI WA UTAPELI WA BARUA PEPE",date:"Imekaguliwa"}
@@ -224,7 +224,7 @@ function showRows(A){
   [...Rw.children].forEach((c,i)=>setTimeout(()=>c.classList.add("show"),reduced?0:120*i));
   const sum=`${T.status[A.v][0]} · ${T.names.dm[0]}: ${pill("dm",A.dm)} · ${T.names.spf[0]}: ${pill("spf",A.spf)} · ${T.names.ll[0]}: ${v(T.ll[A.ll.k][0],A.others.length)} · ${T.score[0]} ${A.score}/100`;
   const good=A.v==="good",C=$("#cta");C.style.display="";
-  C.innerHTML=`<div><h3>${esc(good?T.cta.goodH:T.cta.badH(A.d))}</h3><p>${esc(good?T.cta.goodP:T.cta.badP)}</p></div><div class="bt"><a class="btn wa" target="_blank" rel="noopener" href="${waLink(good?T.wa.good(A.d,sum):T.wa.bad(A.d,sum))}">${icWa}<span>${esc(good?T.cta.goodWa:T.cta.badWa)}</span></a><button class="btn g" id="save" type="button">${esc(T.cta.save)}</button><button class="btn g" id="copy" type="button">${esc(T.cta.copy)}</button></div>`;
+  C.innerHTML=`<div><h3>${esc(good?T.cta.goodH:T.cta.badH(A.d))}</h3><p>${esc(good?T.cta.goodP:T.cta.badP)}</p></div><div class="bt"><a class="btn wa" target="_blank" rel="noopener" href="${waLink(good?T.wa.good(A.d,sum):T.wa.bad(A.d,sum))}">${icWa}<span>${esc(good?T.cta.goodWa:T.cta.badWa)}</span></a><a class="btn g" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(T.cta.shareMsg(T.status[A.v][0],location.href))}">${esc(T.cta.share)}</a><button class="btn g" id="save" type="button">${esc(T.cta.save)}</button><button class="btn g" id="copy" type="button">${esc(T.cta.copy)}</button></div>`;
   $("#save").onclick=()=>saveReport(A);
   $("#copy").onclick=e=>{const b=e.currentTarget;(navigator.clipboard?navigator.clipboard.writeText(location.href):Promise.reject()).then(()=>b.textContent=T.ui.copied).catch(()=>{});};
 }
@@ -253,6 +253,29 @@ function saveReport(A){
     if(navigator.canShare&&navigator.canShare({files:[f]})&&matchMedia("(pointer:coarse)").matches){navigator.share({files:[f],title:T.report.title}).catch(()=>{});return;}
     const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=f.name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},500);},"image/png");
 }
+
+/* ---------- hero light follows the cursor ---------- */
+const hero=$(".hero");if(hero&&!reduced)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--hx",(e.clientX-r.left)+"px");hero.style.setProperty("--hy",(e.clientY-r.top)+"px");},{passive:true});
+
+/* ---------- typing hint in the empty input ---------- */
+(function(){if(reduced)return;const base=input.getAttribute("placeholder");let i=0,dir=1,hold=0;
+  setInterval(()=>{if(document.activeElement===input||input.value){input.setAttribute("placeholder",base);return;}
+    if(hold>0){hold--;return;}i+=dir;if(i>=base.length){dir=-1;hold=14;}else if(i<=0){dir=1;hold=6;}
+    input.setAttribute("placeholder",base.slice(0,i)+(i<base.length?"|":""));},110);})();
+
+/* ---------- scroll story ---------- */
+(function(){const vis=$("#vis"),stps=$$(".stp");if(!vis||!stps.length)return;
+  const mobile=matchMedia("(max-width:900px)");
+  function place(){if(mobile.matches){stps.forEach((s,i)=>{const box=s.querySelector(".inl");if(!box.firstChild){const c=vis.querySelector(".sc"+(i+1)).cloneNode(true);box.appendChild(c);}});}}
+  place();mobile.addEventListener&&mobile.addEventListener("change",place);
+  if("IntersectionObserver" in window){const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){vis.dataset.s=e.target.dataset.s;stps.forEach(s=>s.classList.toggle("on",s===e.target));}}),{rootMargin:"-45% 0px -45% 0px"});stps.forEach(s=>ob.observe(s));}
+  else stps.forEach(s=>s.classList.add("on"));})();
+
+/* ---------- count-up numbers ---------- */
+(function(){const els=$$(".cnt");if(!els.length||reduced||!("IntersectionObserver" in window))return;
+  const ob=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;ob.unobserve(e.target);const el=e.target,to=+el.dataset.to,dec=+el.dataset.dec,t0=performance.now();
+    (function f(t){const p=Math.min(1,(t-t0)/1600),k=1-Math.pow(1-p,4);el.textContent=(to*k).toFixed(dec);if(p<1)requestAnimationFrame(f);})(t0);}),{threshold:.5});
+  els.forEach(el=>{el.textContent=(0).toFixed(+el.dataset.dec);ob.observe(el);});})();
 
 const qs=location.search;if(qs)$$(".lang a").forEach(a=>a.href=a.getAttribute("href").split("?")[0]+qs);
 const pre=new URLSearchParams(qs).get("d");if(pre){input.value=pre;input.dispatchEvent(new Event("input"));setTimeout(run,500);}

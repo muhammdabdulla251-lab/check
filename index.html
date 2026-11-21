@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email Fraud Check: can someone send email as your company? | Free DMARC &amp; spoofing test</title>
+<meta name="description" content="Free 20-second check: can a fraudster send a fake invoice as your company? Tests SPF, DKIM, DMARC and lookalike domains, then shows the fake email live. For the UAE, Oman and East Africa.">
+<link rel="canonical" href="https://almindhrybuilds.me/check/">
+<link rel="alternate" hreflang="en" href="https://almindhrybuilds.me/check/">
+<link rel="alternate" hreflang="ar" href="https://almindhrybuilds.me/check/ar/">
+<link rel="alternate" hreflang="sw" href="https://almindhrybuilds.me/check/sw/">
+<link rel="alternate" hreflang="x-default" href="https://almindhrybuilds.me/check/">
+<meta name="theme-color" content="#04060d">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://almindhrybuilds.me/check/">
+<meta property="og:title" content="Email Fraud Check: can someone send email as your company? | Free DMARC &amp; spoofing test">
+<meta property="og:description" content="Free 20-second check: can a fraudster send a fake invoice as your company? Tests SPF, DKIM, DMARC and lookalike domains, then shows the fake email live. For the UAE, Oman and East Africa.">
+<meta property="og:image" content="https://almindhrybuilds.me/check/og.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://dns.google">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Almindhry Email Fraud Check", "url": "https://almindhrybuilds.me/check/", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "en", "description": "Free 20-second check: can a fraudster send a fake invoice as your company? Tests SPF, DKIM, DMARC and lookalike domains, then shows the fake email live. For the UAE, Oman and East Africa.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Person", "name": "Muhammad Abdulla Almindhry"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "What is DMARC?", "acceptedAnswer": {"@type": "Answer", "text": "A text record in your domain's DNS that tells mail servers (Gmail, Outlook and others) what to do with email that claims to be from you but fails the SPF and DKIM checks: nothing (none), send it to spam (quarantine), or refuse it (reject)."}}, {"@type": "Question", "name": "Does p=none protect me?", "acceptedAnswer": {"@type": "Answer", "text": "No. p=none is watch-only: you receive reports, but fake emails are delivered as normal. Protection starts at quarantine and is complete at reject."}}, {"@type": "Question", "name": "What is a lookalike domain?", "acceptedAnswer": {"@type": "Answer", "text": "A domain one letter away from yours, or the same name on another ending, like the letter o swapped for a zero. Fraudsters use them to send convincing emails even when your own domain is protected. Being registered doesn't make one malicious, but it's worth watching."}}, {"@type": "Question", "name": "Is this check safe? What do you store?", "acceptedAnswer": {"@type": "Answer", "text": "It reads public DNS records only, through Google Public DNS, from inside your browser. It doesn't send email, doesn't log in anywhere, and we don't store the domain you type."}}, {"@type": "Question", "name": "Will the fix stop my real emails?", "acceptedAnswer": {"@type": "Answer", "text": "Not when it's done in stages. We start in watch mode and list everyone who sends as you, then move to quarantine, then reject. Jumping straight to reject is what causes problems."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "The setup itself is one session with you. Then one to two weeks of watching, and a week at quarantine, before full reject."}}]}</script>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas><div class="vignette" aria-hidden="true"></div>
+<nav><div class="wrap">
+  <a class="logo" href=""><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5ee7ff"/><stop offset="1" stop-color="#a78bff"/></linearGradient></defs><path d="M16 2 4 7v8c0 7.2 5.1 13.3 12 15 6.9-1.7 12-7.8 12-15V7z" fill="none" stroke="url(#lg)" stroke-width="2.2"/><path d="M10 12h12v9H10z" fill="none" stroke="url(#lg)" stroke-width="1.8"/><path d="m10 12 6 5 6-5" fill="none" stroke="url(#lg)" stroke-width="1.8"/></svg>Almindhry<span style="color:var(--ink3);font-weight:500">&nbsp;Email Check</span></a>
+  <div class="navlinks"><a class="nl" href="#why">Why it matters</a><a class="nl" href="#how">How it works</a><a class="nl" href="#faq">FAQ</a>
+    <div class="lang"><a href="" aria-current="page">EN</a><a href="ar/" >عربي</a><a href="sw/" >SW</a></div></div>
+</div></nav>
+<main>
+<header class="hero"><div class="scanline"></div>
+  <div class="wrap">
+    <span class="eyebrow"><i></i>Free · 20 seconds · nothing stored</span>
+    <h1>Can someone send an email <span class="g">pretending to be your company?</span></h1>
+    <p class="lead">Type your company&#x27;s website or email. In 20 seconds you&#x27;ll see whether Gmail and Outlook would block a fake invoice “from you”, which lookalike domains exist near yours, and the exact email a fraudster could send today.</p>
+    <div class="console-in"><form id="f" autocomplete="off" novalidate>
+      <span class="prompt">&gt;_</span>
+      <input id="d" placeholder="yourcompany.com or name@yourcompany.com" aria-label="yourcompany.com or name@yourcompany.com" inputmode="url" spellcheck="false" autocapitalize="off">
+      <button class="btn" id="go" type="submit"><span>Run the check</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="transform:scaleX(1)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </form></div>
+    <div class="trust"><span>Reads public DNS through Google, the same data every mail server sees</span><span>Runs in your browser</span><span>No sign-up, nothing stored</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="ops"><div class="ops">
+    <div class="hud"><div class="hud-title"><span><span class="dot"></span>Live scan</span><span>dns.google</span></div>
+      <div class="term" id="term"><div class="cursor-line"><span class="cursor"></span></div></div>
+      <div class="progress"><i id="bar"></i></div></div>
+    <div class="hud"><div class="hud-title"><span>Lookalike radar</span><span>◎</span></div>
+      <div class="radar-wrap"><canvas id="radar"></canvas>
+        <div class="radar-stats"><div><b id="llc">0</b>checked</div><div><b id="llh" style="color:var(--red)">0</b>registered</div></div></div></div>
+  </div></div>
+
+  <div id="sim" class="hud sim">
+    <h3>The fake invoice</h3>
+    <div class="stage">
+      <div class="node src"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff4d6a" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/><path d="M8 8h8" stroke-width="2.6"/></svg></div><span id="simSrc"></span></div>
+      <div class="track" id="track">
+        <div class="mail" id="mail"><div class="h">From: <b id="simFrom"></b><br>To: <b>customer</b></div><div class="s" id="simSubj"></div><div class="b" id="simBody"></div></div>
+        <div class="stamp" id="stamp"></div>
+      </div>
+      <div class="node"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38e1ff" stroke-width="1.8"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 5h14l2 8v6H3v-6z"/></svg></div><span id="simDst"></span></div>
+    </div>
+    <p class="sim-note" id="simNote"></p>
+  </div>
+
+  <div id="report">
+    <div class="hud rep-top">
+      <div class="gauge" id="gaugeWrap"><svg width="170" height="170" viewBox="0 0 170 170"><circle cx="85" cy="85" r="70" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="12"/><circle id="ring" cx="85" cy="85" r="70" fill="none" stroke-width="12" stroke-linecap="round"/></svg><div class="num"><div><b id="scoreNum">0</b><small>/ 100</small></div></div></div>
+      <div class="verdict" id="verdict"></div>
+    </div>
+    <div class="cards" id="cards"></div>
+    <div class="cta hud" id="cta"></div>
+  </div>
+</div>
+
+<section id="why"><div class="wrap">
+  <div class="hud stat reveal"><b>$2.77B</b><div><p>reported lost to business email compromise in 2024: fake invoices, changed bank details, impersonated bosses. That&#x27;s 21,442 complaints to the US FBI alone; most victims never report.</p><a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" target="_blank" rel="noopener">Source: FBI IC3 2024 Internet Crime Report</a></div></div>
+  <div class="sec-h reveal" style="margin-top:80px"><span class="kicker">Why it matters</span><h2>The fake invoice looks exactly like yours</h2><p>Email was built without proof of who sent it. Unless your domain publishes a DMARC policy, anyone can put accounts@yourcompany.com in the “From” line, and your customer&#x27;s mail server has no instruction to stop it.</p></div>
+  <div class="demo reveal">
+    <div class="m hud"><span class="pill bad">Without DMARC</span><div class="mail-static"><div class="h">From: Accounts &lt;accounts@yourcompany.com&gt;</div><b>Invoice INV-2291: updated bank details</b><div style="color:#4a5270;margin-top:4px">Dear customer, please note our new account for this payment…</div></div><p style="color:var(--red);margin:12px 0 0;font-weight:600">→ Delivered to your customer&#x27;s inbox</p></div>
+    <div class="m hud"><span class="pill good">After the lockdown</span><div class="mail-static" style="opacity:.55"><div class="h">From: Accounts &lt;accounts@yourcompany.com&gt;</div><b>Rejected by Gmail and Outlook</b><div style="color:#4a5270;margin-top:4px">Your domain tells receivers: if it fails our checks, refuse it. The fake never reaches your customer.</div></div><p style="color:var(--green);margin:12px 0 0;font-weight:600">✓ Blocked</p></div>
+  </div>
+  <div class="three reveal"><div class="x hud"><b>SPF</b><p>The list of servers allowed to send email as your domain. One record, every real sender included.</p></div><div class="x hud"><b>DKIM</b><p>A digital signature your mail provider adds to each email, proving it wasn&#x27;t forged or changed.</p></div><div class="x hud"><b>DMARC</b><p>Your instruction to the world: what to do with email that fails SPF and DKIM. Only quarantine or reject actually stop fakes.</p></div></div>
+</div></section>
+
+<section id="how" style="padding-top:0"><div class="wrap">
+  <div class="sec-h reveal"><span class="kicker">How the fix works</span><h2>Locked down in stages, so your own invoices never bounce</h2><p>Jumping straight to “reject” can block your real emails from accounting or invoice software. We go step by step.</p></div>
+  <div class="steps reveal">
+    <div class="step hud"><div class="bar"></div><h3>List every sender</h3><p>Your mailbox, website forms, accounting and invoice software. No passwords: you share your screen or add us as a DNS user.</p></div>
+    <div class="step hud"><div class="bar"></div><h3>Watch</h3><p>SPF and DKIM set correctly, DMARC in monitor mode. Reports show who sends as you, real and fake.</p></div>
+    <div class="step hud"><div class="bar"></div><h3>Quarantine</h3><p>Fakes go to spam. You pay only now, after the public check on this page shows protection is live.</p></div>
+    <div class="step hud"><div class="bar"></div><h3>Reject + watch</h3><p>Fakes are refused. Optional monthly watch: a WhatsApp alert the day a lookalike of your domain appears.</p></div>
+  </div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap">
+  <div class="sec-h reveal"><span class="kicker">FAQ</span><h2>Straight answers</h2></div>
+  <div class="faq reveal"><details class="hud"><summary>What is DMARC?</summary><p>A text record in your domain&#x27;s DNS that tells mail servers (Gmail, Outlook and others) what to do with email that claims to be from you but fails the SPF and DKIM checks: nothing (none), send it to spam (quarantine), or refuse it (reject).</p></details><details class="hud"><summary>Does p=none protect me?</summary><p>No. p=none is watch-only: you receive reports, but fake emails are delivered as normal. Protection starts at quarantine and is complete at reject.</p></details><details class="hud"><summary>What is a lookalike domain?</summary><p>A domain one letter away from yours, or the same name on another ending, like the letter o swapped for a zero. Fraudsters use them to send convincing emails even when your own domain is protected. Being registered doesn&#x27;t make one malicious, but it&#x27;s worth watching.</p></details><details class="hud"><summary>Is this check safe? What do you store?</summary><p>It reads public DNS records only, through Google Public DNS, from inside your browser. It doesn&#x27;t send email, doesn&#x27;t log in anywhere, and we don&#x27;t store the domain you type.</p></details><details class="hud"><summary>Will the fix stop my real emails?</summary><p>Not when it&#x27;s done in stages. We start in watch mode and list everyone who sends as you, then move to quarantine, then reject. Jumping straight to reject is what causes problems.</p></details><details class="hud"><summary>How long does it take?</summary><p>The setup itself is one session with you. Then one to two weeks of watching, and a week at quarantine, before full reject.</p></details></div>
+</div></section>
+
+<section id="about" style="padding-top:0"><div class="wrap about">
+  <div class="who hud reveal"><span class="kicker">Who checks this</span><h2 style="font-size:clamp(26px,3.6vw,38px);margin:10px 0 12px">Muhammad Abdulla Almindhry</h2><p style="color:var(--ink2);margin:0">I find and close email-fraud gaps for businesses in the UAE, Oman and East Africa. Most companies I check have no DMARC at all, or have it set to watch-only, which blocks nothing.</p>
+    <ul><li>You pay after a public check shows fake emails in your name are blocked.</li><li>No passwords. You stay in control of your accounts.</li><li>Plus the two things DNS can&#x27;t do: two-step login on every mailbox, and a call-back rule for any email that changes bank details.</li></ul></div>
+  <div class="box hud reveal"><h3 style="font-size:22px">Want it fixed?</h3><p>Run the check above, then send me the result on WhatsApp. I&#x27;ll tell you exactly what&#x27;s missing and how long it takes.</p><a class="btn wa" data-wa-main href="https://wa.me/601123109560" target="_blank" rel="noopener"><span>Message me on WhatsApp</span></a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© <span id="yr"></span> AlmindhryBuilds · Email Fraud Check</span><span>This check reads public DNS records only. It doesn&#x27;t send email or access any account.</span></div></footer>
+<script>
+(function(){var t={"src": "Fraudster", "dst": "Customer's inbox", "subject": "Invoice 2291: our bank details have changed", "body": "Dear customer, please use our new account for this payment. The old one is closed."};document.getElementById('simSrc').textContent=t.src;document.getElementById('simDst').textContent=t.dst;document.getElementById('simSubj').textContent=t.subject;document.getElementById('simBody').textContent=t.body;})();
+</script>
+<script src="app.js" defer></script>
+</body>
+</html>

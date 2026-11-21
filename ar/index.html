@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فحص احتيال البريد الإلكتروني: هل يمكن لأحد انتحال بريد شركتك؟ | فحص DMARC مجاني</title>
+<meta name="description" content="فحص مجاني خلال 20 ثانية: هل يستطيع محتال إرسال فاتورة مزيفة باسم شركتك؟ نفحص SPF وDKIM وDMARC والنطاقات المشابهة، ثم نعرض لك الرسالة المزيفة مباشرة. للإمارات وعُمان وشرق أفريقيا.">
+<link rel="canonical" href="https://almindhrybuilds.me/check/ar/">
+<link rel="alternate" hreflang="en" href="https://almindhrybuilds.me/check/">
+<link rel="alternate" hreflang="ar" href="https://almindhrybuilds.me/check/ar/">
+<link rel="alternate" hreflang="sw" href="https://almindhrybuilds.me/check/sw/">
+<link rel="alternate" hreflang="x-default" href="https://almindhrybuilds.me/check/">
+<meta name="theme-color" content="#04060d">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://almindhrybuilds.me/check/ar/">
+<meta property="og:title" content="فحص احتيال البريد الإلكتروني: هل يمكن لأحد انتحال بريد شركتك؟ | فحص DMARC مجاني">
+<meta property="og:description" content="فحص مجاني خلال 20 ثانية: هل يستطيع محتال إرسال فاتورة مزيفة باسم شركتك؟ نفحص SPF وDKIM وDMARC والنطاقات المشابهة، ثم نعرض لك الرسالة المزيفة مباشرة. للإمارات وعُمان وشرق أفريقيا.">
+<meta property="og:image" content="https://almindhrybuilds.me/check/og.png">
+<meta property="og:locale" content="ar_AE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://dns.google">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Almindhry Email Fraud Check", "url": "https://almindhrybuilds.me/check/ar/", "applicationCategory": "SecurityApplication", "operatingSystem": "Any", "inLanguage": "ar", "description": "فحص مجاني خلال 20 ثانية: هل يستطيع محتال إرسال فاتورة مزيفة باسم شركتك؟ نفحص SPF وDKIM وDMARC والنطاقات المشابهة، ثم نعرض لك الرسالة المزيفة مباشرة. للإمارات وعُمان وشرق أفريقيا.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Person", "name": "Muhammad Abdulla Almindhry"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "ar", "mainEntity": [{"@type": "Question", "name": "ما هو DMARC؟", "acceptedAnswer": {"@type": "Answer", "text": "سجل نصي في إعدادات DNS لنطاقك يخبر خوادم البريد (Gmail وOutlook وغيرها) بما يجب فعله بالرسائل التي تدّعي أنها منك لكنها تفشل في فحوصات SPF وDKIM: لا شيء (none)، أو نقلها إلى العشوائي (quarantine)، أو رفضها (reject)."}}, {"@type": "Question", "name": "هل سياسة p=none تحميني؟", "acceptedAnswer": {"@type": "Answer", "text": "لا. p=none وضع مراقبة فقط: تصلك تقارير، لكن الرسائل المزيفة تُسلَّم كالمعتاد. الحماية تبدأ مع quarantine وتكتمل مع reject."}}, {"@type": "Question", "name": "ما هو النطاق المشابه؟", "acceptedAnswer": {"@type": "Answer", "text": "نطاق يختلف عن نطاقك بحرف واحد أو بامتداد مختلف، مثل استبدال الحرف o بالرقم 0. يستخدمه المحتالون لإرسال رسائل تبدو حقيقية حتى لو كان نطاقك محميًا. تسجيله لا يعني بالضرورة أنه ضار، لكنه يستحق المتابعة."}}, {"@type": "Question", "name": "هل الفحص آمن؟ ماذا تحفظون؟", "acceptedAnswer": {"@type": "Answer", "text": "يقرأ الفحص سجلات DNS العامة فقط عبر Google Public DNS، من داخل متصفحك. لا يرسل بريدًا، ولا يدخل إلى أي حساب، ولا نحفظ النطاق الذي تكتبه."}}, {"@type": "Question", "name": "هل سيوقف الإصلاح رسائلي الحقيقية؟", "acceptedAnswer": {"@type": "Answer", "text": "ليس إذا تم على مراحل. نبدأ بالمراقبة ونحصر كل من يرسل باسمك، ثم ننتقل إلى العزل ثم الرفض. القفز مباشرة إلى reject هو ما يسبب المشاكل."}}, {"@type": "Question", "name": "كم من الوقت يستغرق؟", "acceptedAnswer": {"@type": "Answer", "text": "الإعداد نفسه جلسة واحدة معك. ثم أسبوع إلى أسبوعين من المراقبة، وأسبوع في وضع العزل، قبل الرفض الكامل."}}]}</script>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas><div class="vignette" aria-hidden="true"></div>
+<nav><div class="wrap">
+  <a class="logo" href="../ar/"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5ee7ff"/><stop offset="1" stop-color="#a78bff"/></linearGradient></defs><path d="M16 2 4 7v8c0 7.2 5.1 13.3 12 15 6.9-1.7 12-7.8 12-15V7z" fill="none" stroke="url(#lg)" stroke-width="2.2"/><path d="M10 12h12v9H10z" fill="none" stroke="url(#lg)" stroke-width="1.8"/><path d="m10 12 6 5 6-5" fill="none" stroke="url(#lg)" stroke-width="1.8"/></svg>Almindhry<span style="color:var(--ink3);font-weight:500">&nbsp;Email Check</span></a>
+  <div class="navlinks"><a class="nl" href="#why">لماذا يهم</a><a class="nl" href="#how">كيف يعمل</a><a class="nl" href="#faq">الأسئلة الشائعة</a>
+    <div class="lang"><a href="../" >EN</a><a href="../ar/" aria-current="page">عربي</a><a href="../sw/" >SW</a></div></div>
+</div></nav>
+<main>
+<header class="hero"><div class="scanline"></div>
+  <div class="wrap">
+    <span class="eyebrow"><i></i>مجاني · 20 ثانية · لا نحفظ أي بيانات</span>
+    <h1>هل يستطيع أحدٌ أن يرسل بريدًا <span class="g">منتحلًا اسم شركتك؟</span></h1>
+    <p class="lead">اكتب موقع شركتك أو بريدها الإلكتروني. خلال 20 ثانية سترى إن كان Gmail وOutlook سيحجبان فاتورة مزيفة «منك»، وما النطاقات المشابهة لنطاقك، والرسالة نفسها التي يستطيع محتال إرسالها اليوم.</p>
+    <div class="console-in"><form id="f" autocomplete="off" novalidate>
+      <span class="prompt">&gt;_</span>
+      <input id="d" placeholder="yourcompany.com أو name@yourcompany.com" aria-label="yourcompany.com أو name@yourcompany.com" inputmode="url" spellcheck="false" autocapitalize="off">
+      <button class="btn" id="go" type="submit"><span>ابدأ الفحص</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true" style="transform:scaleX(-1)"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </form></div>
+    <div class="trust"><span>نقرأ بيانات DNS العامة عبر Google، وهي نفس ما تراه كل خوادم البريد</span><span>يعمل داخل متصفحك</span><span>بدون تسجيل، ولا نحفظ شيئًا</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div id="ops"><div class="ops">
+    <div class="hud"><div class="hud-title"><span><span class="dot"></span>فحص مباشر</span><span>dns.google</span></div>
+      <div class="term" id="term"><div class="cursor-line"><span class="cursor"></span></div></div>
+      <div class="progress"><i id="bar"></i></div></div>
+    <div class="hud"><div class="hud-title"><span>رادار النطاقات المشابهة</span><span>◎</span></div>
+      <div class="radar-wrap"><canvas id="radar"></canvas>
+        <div class="radar-stats"><div><b id="llc">0</b>تم فحصها</div><div><b id="llh" style="color:var(--red)">0</b>مسجّلة</div></div></div></div>
+  </div></div>
+
+  <div id="sim" class="hud sim">
+    <h3>الفاتورة المزيفة</h3>
+    <div class="stage">
+      <div class="node src"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff4d6a" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/><path d="M8 8h8" stroke-width="2.6"/></svg></div><span id="simSrc"></span></div>
+      <div class="track" id="track">
+        <div class="mail" id="mail"><div class="h">From: <b id="simFrom"></b><br>To: <b>customer</b></div><div class="s" id="simSubj"></div><div class="b" id="simBody"></div></div>
+        <div class="stamp" id="stamp"></div>
+      </div>
+      <div class="node"><div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38e1ff" stroke-width="1.8"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 5h14l2 8v6H3v-6z"/></svg></div><span id="simDst"></span></div>
+    </div>
+    <p class="sim-note" id="simNote"></p>
+  </div>
+
+  <div id="report">
+    <div class="hud rep-top">
+      <div class="gauge" id="gaugeWrap"><svg width="170" height="170" viewBox="0 0 170 170"><circle cx="85" cy="85" r="70" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="12"/><circle id="ring" cx="85" cy="85" r="70" fill="none" stroke-width="12" stroke-linecap="round"/></svg><div class="num"><div><b id="scoreNum">0</b><small>/ 100</small></div></div></div>
+      <div class="verdict" id="verdict"></div>
+    </div>
+    <div class="cards" id="cards"></div>
+    <div class="cta hud" id="cta"></div>
+  </div>
+</div>
+
+<section id="why"><div class="wrap">
+  <div class="hud stat reveal"><b>2.77 مليار $</b><div><p>خسائر مُبلّغ عنها بسبب اختراق البريد الإلكتروني للشركات في 2024: فواتير مزيفة، وبيانات بنكية مُغيّرة، وانتحال للمدراء. ذلك من 21,442 بلاغًا لمكتب التحقيقات الفيدرالي الأمريكي وحده، ومعظم الضحايا لا يبلّغون.</p><a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" target="_blank" rel="noopener">المصدر: تقرير FBI IC3 لجرائم الإنترنت 2024</a></div></div>
+  <div class="sec-h reveal" style="margin-top:80px"><span class="kicker">لماذا يهم</span><h2>الفاتورة المزيفة تبدو تمامًا مثل فاتورتك</h2><p>صُمّم البريد الإلكتروني دون إثبات لهوية المرسل. ما لم ينشر نطاقك سياسة DMARC، يستطيع أي شخص وضع accounts@yourcompany.com في خانة «من»، ولن يجد خادم بريد عميلك أي تعليمات لإيقافها.</p></div>
+  <div class="demo reveal">
+    <div class="m hud"><span class="pill bad">بدون DMARC</span><div class="mail-static"><div class="h">From: Accounts &lt;accounts@yourcompany.com&gt;</div><b>الفاتورة INV-2291: تم تحديث بياناتنا البنكية</b><div style="color:#4a5270;margin-top:4px">عزيزي العميل، يرجى ملاحظة حسابنا الجديد لهذه الدفعة…</div></div><p style="color:var(--red);margin:12px 0 0;font-weight:600">→ تصل إلى صندوق وارد عميلك</p></div>
+    <div class="m hud"><span class="pill good">بعد إحكام الحماية</span><div class="mail-static" style="opacity:.55"><div class="h">From: Accounts &lt;accounts@yourcompany.com&gt;</div><b>يرفضها Gmail وOutlook</b><div style="color:#4a5270;margin-top:4px">نطاقك يخبر الخوادم: إن لم تجتز فحوصاتنا فارفضها. الرسالة المزيفة لا تصل إلى عميلك أبدًا.</div></div><p style="color:var(--green);margin:12px 0 0;font-weight:600">✓ محجوبة</p></div>
+  </div>
+  <div class="three reveal"><div class="x hud"><b>SPF</b><p>قائمة الخوادم المسموح لها بالإرسال باسم نطاقك. سجل واحد يضم كل المرسلين الحقيقيين.</p></div><div class="x hud"><b>DKIM</b><p>توقيع رقمي يضيفه مزود بريدك إلى كل رسالة، يثبت أنها لم تُزوَّر أو تُعدَّل.</p></div><div class="x hud"><b>DMARC</b><p>تعليماتك للعالم: ماذا يُفعل بالبريد الذي يفشل في SPF وDKIM. فقط quarantine أو reject يوقفان الرسائل المزيفة فعلًا.</p></div></div>
+</div></section>
+
+<section id="how" style="padding-top:0"><div class="wrap">
+  <div class="sec-h reveal"><span class="kicker">كيف يتم الإصلاح</span><h2>نُحكم الحماية على مراحل، حتى لا ترتد فواتيرك أنت</h2><p>الانتقال مباشرة إلى reject قد يحجب رسائلك الحقيقية من برنامج المحاسبة أو الفوترة. لذلك نتقدم خطوة بخطوة.</p></div>
+  <div class="steps reveal">
+    <div class="step hud"><div class="bar"></div><h3>حصر كل المرسلين</h3><p>صندوق بريدك، ونماذج موقعك، وبرامج المحاسبة والفواتير. بدون كلمات مرور: تشارك شاشتك أو تضيفنا مستخدمًا في إدارة DNS.</p></div>
+    <div class="step hud"><div class="bar"></div><h3>المراقبة</h3><p>ضبط SPF وDKIM بشكل صحيح، وDMARC في وضع المراقبة. التقارير تكشف من يرسل باسمك، الحقيقي والمزيف.</p></div>
+    <div class="step hud"><div class="bar"></div><h3>العزل</h3><p>تذهب الرسائل المزيفة إلى العشوائي. لا تدفع إلا الآن، بعد أن يُظهر الفحص العام في هذه الصفحة أن الحماية فعّالة.</p></div>
+    <div class="step hud"><div class="bar"></div><h3>الرفض + المتابعة</h3><p>تُرفض الرسائل المزيفة. ومتابعة شهرية اختيارية: تنبيه عبر واتساب يوم ظهور نطاق مشابه لنطاقك.</p></div>
+  </div>
+</div></section>
+
+<section id="faq" style="padding-top:0"><div class="wrap">
+  <div class="sec-h reveal"><span class="kicker">الأسئلة الشائعة</span><h2>إجابات مباشرة</h2></div>
+  <div class="faq reveal"><details class="hud"><summary>ما هو DMARC؟</summary><p>سجل نصي في إعدادات DNS لنطاقك يخبر خوادم البريد (Gmail وOutlook وغيرها) بما يجب فعله بالرسائل التي تدّعي أنها منك لكنها تفشل في فحوصات SPF وDKIM: لا شيء (none)، أو نقلها إلى العشوائي (quarantine)، أو رفضها (reject).</p></details><details class="hud"><summary>هل سياسة p=none تحميني؟</summary><p>لا. p=none وضع مراقبة فقط: تصلك تقارير، لكن الرسائل المزيفة تُسلَّم كالمعتاد. الحماية تبدأ مع quarantine وتكتمل مع reject.</p></details><details class="hud"><summary>ما هو النطاق المشابه؟</summary><p>نطاق يختلف عن نطاقك بحرف واحد أو بامتداد مختلف، مثل استبدال الحرف o بالرقم 0. يستخدمه المحتالون لإرسال رسائل تبدو حقيقية حتى لو كان نطاقك محميًا. تسجيله لا يعني بالضرورة أنه ضار، لكنه يستحق المتابعة.</p></details><details class="hud"><summary>هل الفحص آمن؟ ماذا تحفظون؟</summary><p>يقرأ الفحص سجلات DNS العامة فقط عبر Google Public DNS، من داخل متصفحك. لا يرسل بريدًا، ولا يدخل إلى أي حساب، ولا نحفظ النطاق الذي تكتبه.</p></details><details class="hud"><summary>هل سيوقف الإصلاح رسائلي الحقيقية؟</summary><p>ليس إذا تم على مراحل. نبدأ بالمراقبة ونحصر كل من يرسل باسمك، ثم ننتقل إلى العزل ثم الرفض. القفز مباشرة إلى reject هو ما يسبب المشاكل.</p></details><details class="hud"><summary>كم من الوقت يستغرق؟</summary><p>الإعداد نفسه جلسة واحدة معك. ثم أسبوع إلى أسبوعين من المراقبة، وأسبوع في وضع العزل، قبل الرفض الكامل.</p></details></div>
+</div></section>
+
+<section id="about" style="padding-top:0"><div class="wrap about">
+  <div class="who hud reveal"><span class="kicker">من يقوم بالفحص</span><h2 style="font-size:clamp(26px,3.6vw,38px);margin:10px 0 12px">محمد عبدالله المنذري</h2><p style="color:var(--ink2);margin:0">أكتشف ثغرات الاحتيال في البريد الإلكتروني وأغلقها للشركات في الإمارات وعُمان وشرق أفريقيا. معظم الشركات التي أفحصها ليس لديها DMARC إطلاقًا، أو لديها إعداد للمراقبة فقط لا يحجب شيئًا.</p>
+    <ul><li>تدفع بعد أن يُظهر فحص عام أن الرسائل المزيفة باسمك محجوبة.</li><li>بدون كلمات مرور. تبقى أنت المتحكم في حساباتك.</li><li>بالإضافة إلى ما لا يستطيع DNS فعله: تسجيل دخول بخطوتين لكل صندوق بريد، وقاعدة اتصال هاتفي للتحقق من أي رسالة تغيّر البيانات البنكية.</li></ul></div>
+  <div class="box hud reveal"><h3 style="font-size:22px">تريد الإصلاح؟</h3><p>شغّل الفحص أعلاه، ثم أرسل لي النتيجة عبر واتساب. سأخبرك بالضبط ما الناقص وكم يستغرق.</p><a class="btn wa" data-wa-main href="https://wa.me/601123109560" target="_blank" rel="noopener"><span>راسلني على واتساب</span></a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© <span id="yr"></span> AlmindhryBuilds · Email Fraud Check</span><span>يقرأ هذا الفحص سجلات DNS العامة فقط. لا يرسل بريدًا ولا يصل إلى أي حساب.</span></div></footer>
+<script>
+(function(){var t={"src": "المحتال", "dst": "صندوق عميلك", "subject": "الفاتورة 2291: تغيّرت بياناتنا البنكية", "body": "عزيزي العميل، يرجى استخدام حسابنا الجديد لهذه الدفعة. الحساب القديم مُغلق."};document.getElementById('simSrc').textContent=t.src;document.getElementById('simDst').textContent=t.dst;document.getElementById('simSubj').textContent=t.subject;document.getElementById('simBody').textContent=t.body;})();
+</script>
+<script src="../app.js" defer></script>
+</body>
+</html>

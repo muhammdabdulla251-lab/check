@@ -334,3 +334,8 @@ html[lang="ar"] .sl{font-family:var(--font)}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv,.row,.hero h1 .w{opacity:1!important;transform:none!important;filter:none!important}}
 .me .avp{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 30%;border:2px solid rgba(169,155,255,.55);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.badgebox{flex-basis:100%;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;margin-top:10px;padding-top:24px;border-top:1px solid var(--line)}
+.badgebox h3{font-size:19px}.badgebox p{margin:6px 0 0;color:var(--ink2);max-width:480px;font-size:15px}
+.badgebox .bdr{display:grid;gap:10px;justify-items:start}
+.badgebox textarea{width:min(380px,80vw);font:12px/1.5 var(--mono);background:rgba(0,0,0,.35);color:#c7cbe0;border:1px solid var(--line2);border-radius:10px;padding:10px;resize:none}
+@media (max-width:760px){.badgebox{grid-template-columns:1fr}}

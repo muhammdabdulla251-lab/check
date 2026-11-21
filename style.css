@@ -333,3 +333,4 @@ html[lang="ar"] .sl{font-family:var(--font)}
 .rv.in{opacity:1;transform:none}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv,.row,.hero h1 .w{opacity:1!important;transform:none!important;filter:none!important}}
+.me .avp{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 30%;border:2px solid rgba(169,155,255,.55);box-shadow:0 10px 30px rgba(0,0,0,.4)}

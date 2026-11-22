@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proof: our own email, locked down. Check it live.</title>
+<meta name="description" content="Before we protect anyone else's email, we did it to our own. See the exact settings on almindhrybuilds.me, read live from Google's public DNS, and what changes for a fake email sent in our name.">
+<link rel="canonical" href="https://almindhrybuilds.me/check/proof/">
+<meta name="theme-color" content="#07080b">
+<meta property="og:type" content="article"><meta property="og:url" content="https://almindhrybuilds.me/check/proof/"><meta property="og:title" content="We locked down our own email first. Check it live."><meta property="og:description" content="The exact settings on almindhrybuilds.me, read live from Google's public DNS. Fake emails in our name are refused."><meta property="og:image" content="https://almindhrybuilds.me/check/og.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://dns.google">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"We locked down our own email first","description":"The SPF, DKIM and DMARC settings on almindhrybuilds.me, read live from Google Public DNS, and the Gmail authentication result from a test on 21 November 2026.","url":"https://almindhrybuilds.me/check/proof/","datePublished":"2026-11-22","author":{"@type":"Person","name":"Muhammad Abdulla Almindhry","url":"https://almindhrybuilds.me/"}}</script>
+<style>
+.pf-hero{padding:150px 0 70px;position:relative;overflow:hidden}
+.pf-hero h1{font-size:clamp(42px,6.6vw,88px);margin:22px 0 20px;letter-spacing:-.045em;max-width:980px}
+.pf-hero .sub{max-width:680px}
+.pf-hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+
+/* live board */
+.board{padding:0}
+.board-h{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:22px 26px;border-bottom:1px solid var(--line)}
+.board-h h2{font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;display:flex;align-items:center;gap:12px}
+.live{display:inline-flex;align-items:center;gap:8px;font:500 12.5px var(--mono);color:var(--ink2);background:rgba(255,255,255,.04);border:1px solid var(--line2);padding:5px 11px;border-radius:99px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--ink3)}
+.live.on i{background:var(--green);box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pg 1.8s infinite}
+.live.off i{background:var(--amber)}
+@keyframes pg{70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.rec{display:grid;grid-template-columns:44px 1fr auto;gap:18px;align-items:start;padding:24px 26px;border-bottom:1px solid var(--line)}
+.rec:last-of-type{border-bottom:0}
+.rec .ix{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.04);border:1px solid var(--line2);font:500 13px var(--mono);color:var(--ink2)}
+.rec h3{font-size:18.5px;margin-bottom:4px}
+.rec .tech{font:500 12px var(--mono);color:var(--ink3);margin-inline-start:8px;letter-spacing:.02em}
+.rec p{margin:0 0 12px;color:var(--ink2);font-size:15.5px;max-width:640px}
+.rec code{display:block;font:13px/1.55 var(--mono);color:#d9d3ff;background:rgba(139,123,255,.08);border:1px solid rgba(139,123,255,.2);border-radius:10px;padding:10px 12px;word-break:break-all;direction:ltr}
+.rec code + code{margin-top:6px}
+.chip{display:inline-flex;align-items:center;gap:7px;font:600 12.5px var(--font);padding:6px 11px;border-radius:99px;white-space:nowrap;background:rgba(255,255,255,.05);color:var(--ink3);border:1px solid var(--line2)}
+.chip:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.chip.ok{background:var(--green-bg);color:var(--green);border-color:rgba(52,211,153,.3)}
+.chip.bad{background:var(--red-bg);color:#ff8aa0;border-color:rgba(255,84,112,.3)}
+.chip.wait:before{animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.25}}
+.board-f{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:16px 26px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink3);background:rgba(255,255,255,.015)}
+.board-f a{color:var(--ink2);text-underline-offset:3px}
+@media (max-width:640px){.rec{grid-template-columns:1fr;gap:10px}.rec .ix{display:none}.rec .chip{justify-self:start;order:-1}}
+
+/* versus */
+.pvs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.pvs{grid-template-columns:1fr}}
+.pvs .spot{padding:30px}
+.pvs .lab{font:500 12.5px var(--mono);letter-spacing:.04em;text-transform:uppercase}
+.pvs .bad-s .lab{color:#ff8aa0}.pvs .good-s .lab{color:var(--green)}
+.pvs h3{font-size:clamp(22px,2.4vw,28px);margin:12px 0 18px;letter-spacing:-.02em}
+.pflow{display:grid;gap:10px}
+.pflow div{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start;color:var(--ink2);font-size:15.5px}
+.pflow b{color:var(--ink);font-weight:500}
+.pflow span.n{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font:600 12px var(--mono);background:rgba(255,255,255,.05);color:var(--ink2)}
+.bad-s{background:linear-gradient(160deg,rgba(255,84,112,.07),transparent 60%),var(--s1)}
+.good-s{background:linear-gradient(160deg,rgba(52,211,153,.08),transparent 60%),var(--s1)}
+.end{margin-top:18px;padding:14px 16px;border-radius:12px;font-weight:600;font-size:15px;display:flex;gap:10px;align-items:center}
+.bad-s .end{background:var(--red-bg);color:#ffb3c0}
+.good-s .end{background:var(--green-bg);color:#8ff0c4}
+.src{margin:14px 0 0;font-size:13px;color:var(--ink3)}
+.src a{color:var(--ink2)}
+
+/* gmail */
+.gm{display:grid;grid-template-columns:1fr 1.05fr;gap:16px;align-items:stretch}
+@media (max-width:900px){.gm{grid-template-columns:1fr}}
+.gm .txt{padding:34px}
+.gm .txt h3{font-size:clamp(24px,2.6vw,32px);letter-spacing:-.02em;margin-bottom:14px}
+.gm .txt p{color:var(--ink2);margin:0 0 14px}
+.gm .txt ol{margin:0;padding-left:20px;color:var(--ink2);display:grid;gap:6px}
+.gm .txt ol b{color:var(--ink);font-weight:500}
+.orig{padding:0;background:#f6f7f9;color:#1f1f1f;border-color:transparent}
+.orig .ob{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid #e3e5ea;font:500 14px var(--font);color:#444}
+.orig .ob i{width:10px;height:10px;border-radius:50%;background:#d0d3da}
+.orig table{width:100%;border-collapse:collapse;font-size:14px}
+.orig td{padding:12px 18px;border-bottom:1px solid #eceef2;vertical-align:top}
+.orig td:first-child{color:#5f6368;width:42%}
+.orig td b{font-weight:600}
+.pass{display:inline-block;font:700 12.5px var(--mono);letter-spacing:.06em;color:#137333;background:#e6f4ea;border-radius:6px;padding:3px 8px}
+.orig .cap2{padding:14px 18px;font-size:12.5px;color:#6b7280}
+
+/* lessons */
+.ls{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.ls{grid-template-columns:1fr}}
+.ls .spot{padding:28px}
+.ls .tag{font:500 12px var(--mono);color:var(--amber);letter-spacing:.04em;text-transform:uppercase}
+.ls h3{font-size:19px;margin:10px 0 10px;line-height:1.25}
+.ls p{margin:0;color:var(--ink2);font-size:15px}
+
+/* free tips */
+.tips{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:860px){.tips{grid-template-columns:1fr}}
+.tips .spot{padding:30px}
+.tips h3{font-size:20px;margin-bottom:10px}
+.tips p{margin:0;color:var(--ink2)}
+.tips .free{display:inline-block;margin-bottom:12px;font:600 11.5px var(--mono);letter-spacing:.06em;color:#06120c;background:var(--green);padding:3px 9px;border-radius:99px}
+
+/* who */
+.who2{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;padding:34px;background:linear-gradient(160deg,#141226,#0d1118)}
+.who2 img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid var(--line2)}
+.who2 h3{font-size:22px}
+.who2 small{color:var(--ink3);font-size:14px}
+.who2 p{margin:12px 0 18px;color:var(--ink2);max-width:640px}
+.who2 .acts{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:640px){.who2{grid-template-columns:1fr}.who2 .acts .btn{width:100%}}
+.honest{margin-top:16px;padding:18px 22px;font-size:14px;color:var(--ink2);display:flex;gap:12px;align-items:flex-start}
+.honest svg{flex:none;margin-top:2px;color:var(--a2)}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<nav class="solid"><div class="wrap">
+  <a class="logo" href="../"><span class="mk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c4b9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.6 7.5 10 4.3-1.4 7.5-5.4 7.5-10v-6z"/><path d="m8.8 12 2.3 2.3 4.4-4.6"/></svg></span>Almindhry <small>Proof</small></a>
+  <div class="nav-r"><a class="l" href="#live">Live check</a><a class="l" href="#gmail">Gmail result</a><a class="l" href="#how">How we'd do yours</a><a class="btn w sm" href="../">Check my company</a></div>
+</div></nav>
+
+<header class="pf-hero">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <span class="badge"><b>Live</b>Read from Google's public records as you open this page</span>
+    <h1>Before we touch your email, <span class="em">we locked down our own.</span></h1>
+    <p class="sub">Anyone can claim to protect your company. This page shows the job done on our own company email, <b>almindhrybuilds.me</b>, with settings you can check yourself right now. Nothing here needs you to trust us.</p>
+    <div class="acts"><a class="btn w" href="#live">See the live check</a><a class="btn g" href="../">Check my company instead</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="spot board" id="live">
+    <div class="board-h"><h2>almindhrybuilds.me, right now</h2><span class="live" id="liveTag"><i></i><span id="liveTxt">Reading Google's records…</span></span></div>
+
+    <div class="rec">
+      <span class="ix">01</span>
+      <div><h3>Approved senders list <span class="tech">SPF</span></h3>
+        <p>Names the only service allowed to send email as us. The <b>-all</b> at the end means: <b>everyone else is not allowed</b>.</p>
+        <code id="spfVal">v=spf1 include:spf.brevo.com -all</code></div>
+      <span class="chip wait" id="spfChip">Checking</span>
+    </div>
+
+    <div class="rec">
+      <span class="ix">02</span>
+      <div><h3>Digital signature <span class="tech">DKIM</span></h3>
+        <p>Every real email we send carries a signature that only our sending service can make. A stranger can copy our name, but <b>not the signature</b>.</p>
+        <code id="dk1Val">brevo1._domainkey → b1.almindhrybuilds-me.dkim.brevo.com</code>
+        <code id="dk2Val">brevo2._domainkey → b2.almindhrybuilds-me.dkim.brevo.com</code></div>
+      <span class="chip wait" id="dkChip">Checking</span>
+    </div>
+
+    <div class="rec">
+      <span class="ix">03</span>
+      <div><h3>The instruction to Gmail and Outlook <span class="tech">DMARC</span></h3>
+        <p><b>p=reject</b> tells them to <b>refuse</b> any email that claims to be from us and fails the two checks above. <b>Strict</b> mode (adkim=s, aspf=s) means it must match our exact address, not just a similar one.</p>
+        <code id="dmVal">v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:rua@dmarc.brevo.com</code></div>
+      <span class="chip wait" id="dmChip">Checking</span>
+    </div>
+
+    <div class="board-f"><span id="stamp">Values shown are from 22 Nov 2026 until the live read finishes.</span><span>Don't trust this box either: <a href="https://toolbox.googleapps.com/apps/checkmx/check?domain=almindhrybuilds.me" target="_blank" rel="noopener">check with Google's own tool</a></span></div>
+  </div>
+
+  <section style="padding:100px 0 0"><div class="sh"><span class="kicker">What it changes</span><h2>The same fake email, two different endings.</h2><p>A stranger writes “our bank details have changed” and puts a company's address in the From line. Here's what happens next.</p></div>
+    <div class="pvs">
+      <div class="spot bad-s"><span class="lab">86% of companies we checked</span><h3>No instruction, or “watch only”</h3>
+        <div class="pflow"><div><span class="n">1</span><span>The fake arrives at Gmail or Outlook <b>with the company's real address</b>.</span></div><div><span class="n">2</span><span>The company never told them what to do with fakes, so <b>they deliver it</b>.</span></div><div><span class="n">3</span><span>The customer sees a normal-looking invoice from a name they trust.</span></div></div>
+        <div class="end">✕ The fake lands in the inbox</div>
+        <p class="src">464 of 537 companies in Oman, the UAE and Tanzania, Nov 2026. <a href="../fraud-index/">Email Fraud Index</a></p></div>
+      <div class="spot good-s"><span class="lab">almindhrybuilds.me</span><h3>p=reject, strict</h3>
+        <div class="pflow"><div><span class="n">1</span><span>The fake arrives claiming to be <b>@almindhrybuilds.me</b>.</span></div><div><span class="n">2</span><span>It isn't from our approved sender and has <b>no valid signature</b>.</span></div><div><span class="n">3</span><span>Our instruction says refuse, so Gmail and Outlook <b>are told to throw it away</b>.</span></div></div>
+        <div class="end">✓ The fake is refused before anyone reads it</div>
+        <p class="src">The settings in the live box above.</p></div>
+    </div>
+  </section>
+
+  <section id="gmail" style="padding:100px 0 0">
+    <div class="gm">
+      <div class="spot txt"><span class="kicker">The real-world test</span><h3 style="margin-top:14px">Our real emails still arrive, and they pass every check.</h3>
+        <p>Blocking fakes is only half the job. The other half is making sure <b style="color:var(--ink);font-weight:500">your own invoices still get through</b>. So we tested it on 21 November 2026:</p>
+        <ol><li>Sent an email from <b>muhammad@almindhrybuilds.me</b> to a separate Gmail account.</li><li>Opened it, then <b>⋮ → Show original</b>.</li><li>Gmail's verdict on all three checks: <b>PASS</b>.</li></ol>
+        <p style="margin-top:14px">Want to see it yourself? Message us and we'll send you a test email. Open <b style="color:var(--ink);font-weight:500">Show original</b> on your side.</p></div>
+      <div class="spot orig" aria-label="Gmail Show original summary, recreated">
+        <div class="ob"><i></i><i></i><i></i><span style="margin-left:6px">Original message · Gmail</span></div>
+        <table>
+          <tr><td>From</td><td><b>Muhammad Abdulla Almindhry</b><br>&lt;muhammad@almindhrybuilds.me&gt;</td></tr>
+          <tr><td>SPF</td><td><span class="pass">PASS</span></td></tr>
+          <tr><td>DKIM</td><td><span class="pass">PASS</span></td></tr>
+          <tr><td>DMARC</td><td><span class="pass">PASS</span></td></tr>
+        </table>
+        <div class="cap2">Recreated from our test on 21 Nov 2026 (summary rows only). Ask for a test email to see the real thing in your own inbox.</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:100px 0 0"><div class="sh"><span class="kicker">What we learned doing it</span><h2>Three traps, and how we avoid them on your email.</h2></div>
+    <div class="ls">
+      <div class="spot"><span class="tag">Trap 1</span><h3>Setup wizards suggest “watch only”.</h3><p>Ours did too, while we were already on “refuse”. Copying it would have switched our protection off. We kept refuse and added the wizard's reporting address instead.</p></div>
+      <div class="spot"><span class="tag">Trap 2</span><h3>Two approved-senders lists cancel each other.</h3><p>Add a second list for a new tool and both stop working. There must be exactly one, with every real sender on it.</p></div>
+      <div class="spot"><span class="tag">Trap 3</span><h3>Going straight to “refuse” can block your own invoices.</h3><p>We have one sending service, so we could. Most companies have several: mailbox, website form, accounting software. So yours goes in stages: <b style="color:var(--ink);font-weight:500">watch, then spam folder, then refuse</b>.</p></div>
+    </div>
+  </section>
+
+  <section id="how" style="padding:100px 0 0"><div class="sh"><span class="kicker">How we'd do yours</span><h2>The same result on your company, without the risk.</h2></div>
+    <div class="tl"><div class="spot s"><h3>A 15-minute WhatsApp call</h3><p>We list everything that sends email for you: your mailbox, your website, your accounting software.</p></div><div class="spot s"><h3>We switch it on together</h3><p>You stay logged in to your own accounts. We never ask for passwords.</p></div><div class="spot s"><h3>We watch for about two weeks</h3><p>So your real invoices keep arriving while we find every sender.</p></div><div class="spot s"><h3>You pay when it's green</h3><p>When the public check shows fakes are being stopped. Not before.</p></div></div>
+  </section>
+
+  <section style="padding:100px 0 0"><div class="sh"><span class="kicker">Free, whatever you decide</span><h2>Two things settings can't do. Do them today.</h2></div>
+    <div class="tips">
+      <div class="spot"><span class="free">FREE</span><h3>Turn on two-step login for every mailbox</h3><p>If a fraudster steals a password, they send from your <b style="color:var(--ink);font-weight:500">real</b> account, and no setting can stop that. Microsoft 365 calls it “Security defaults”; Google calls it “2-Step Verification”. Ten minutes per mailbox.</p></div>
+      <div class="spot"><span class="free">FREE</span><h3>Give your accounts team one rule</h3><p>Any email that changes bank details gets a phone call before payment, <b style="color:var(--ink);font-weight:500">to a number you already have on file</b>, never a number written in that email.</p></div>
+    </div>
+  </section>
+
+  <section style="padding:100px 0 0">
+    <div class="spot who2"><img src="../me.jpg" alt="Muhammad Abdulla Almindhry" width="96" height="96" loading="lazy">
+      <div><h3>Muhammad Abdulla Almindhry</h3><small>Email security specialist · Serving businesses worldwide</small>
+        <p>I check a company's email setup, close every gap with them step by step, and keep watch afterwards, so their customers only receive emails that are really from them.</p>
+        <div class="acts"><a class="btn wa" href="https://wa.me/601123109560" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg><span>Ask for a test email</span></a><a class="btn g" href="mailto:muhammad@almindhrybuilds.me">muhammad@almindhrybuilds.me</a></div></div>
+    </div>
+    <div class="spot honest"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 8v5M12 16.5v.01"/></svg><span>Everything on this page is about <b style="color:var(--ink);font-weight:500">our own domain</b>. We'll only ever show a client's result here with their written permission.</span></div>
+  </section>
+
+  <section style="padding:100px 0"><div class="spot final"><h2>Now see where your company stands.</h2><a class="btn w" href="../">Check my company in 20 seconds</a></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 AlmindhryBuilds · <a href="/" style="color:inherit">almindhrybuilds.me</a></span><span>The live box reads public DNS through Google, in your browser. Nothing is stored.</span></div></footer>
+
+<script>
+(function(){
+  var D='almindhrybuilds.me';
+  function q(name,type){return fetch('https://dns.google/resolve?name='+encodeURIComponent(name)+'&type='+type,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()})}
+  function txt(j){return (j.Answer||[]).filter(function(a){return a.type===16}).map(function(a){return a.data.replace(/^"|"$/g,'').replace(/" "/g,'')})}
+  function cn(j){return (j.Answer||[]).filter(function(a){return a.type===5}).map(function(a){return a.data.replace(/\.$/,'')})}
+  function set(id,ok,good,bad){var c=document.getElementById(id);c.className='chip '+(ok?'ok':'bad');c.textContent=ok?good:bad}
+  var tag=document.getElementById('liveTag'),lt=document.getElementById('liveTxt'),st=document.getElementById('stamp');
+  Promise.all([q(D,'TXT'),q('_dmarc.'+D,'TXT'),q('brevo1._domainkey.'+D,'CNAME'),q('brevo2._domainkey.'+D,'CNAME')]).then(function(r){
+    var spf=txt(r[0]).filter(function(s){return /^v=spf1/i.test(s)});
+    var dm=txt(r[1]).filter(function(s){return /^v=DMARC1/i.test(s)});
+    var k1=cn(r[2]),k2=cn(r[3]);
+    if(spf.length)document.getElementById('spfVal').textContent=spf.join('\n');
+    if(dm.length)document.getElementById('dmVal').textContent=dm[0];
+    if(k1.length)document.getElementById('dk1Val').textContent='brevo1._domainkey → '+k1[0];
+    if(k2.length)document.getElementById('dk2Val').textContent='brevo2._domainkey → '+k2[0];
+    set('spfChip',spf.length===1&&/-all\s*$/.test(spf[0]),'Found · strict','Changed');
+    set('dkChip',k1.length&&k2.length,'Found · 2 keys','Missing');
+    var p=(dm[0]||'').match(/;\s*p=(\w+)/i);
+    set('dmChip',p&&p[1].toLowerCase()==='reject','Refuse fakes','Not refusing');
+    tag.className='live on';lt.textContent='Live from Google DNS';
+    st.textContent='Read just now ('+new Date().toLocaleString()+') through Google Public DNS, from your own browser.';
+  }).catch(function(){
+    ['spfChip','dkChip','dmChip'].forEach(function(id){var c=document.getElementById(id);c.className='chip';c.textContent='As of 22 Nov'});
+    tag.className='live off';lt.textContent='Live read blocked on this network';
+    st.textContent='Your network blocked the live read. Values shown are from 22 Nov 2026; use Google’s tool to confirm.';
+  });
+})();
+</script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "373cd8223e39418493073665583a57c6", "spa": false}'></script>
+</body>
+</html>
